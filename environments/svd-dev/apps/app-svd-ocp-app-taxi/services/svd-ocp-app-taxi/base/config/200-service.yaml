@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/name: svd-ocp-app-taxi
+    app.kubernetes.io/part-of: app-svd-ocp-app-taxi
+  name: svd-ocp-app-taxi
+  namespace: svd-dev
+spec:
+  ports:
+  - name: http
+    port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app.kubernetes.io/name: svd-ocp-app-taxi
+    app.kubernetes.io/part-of: app-svd-ocp-app-taxi
+status:
+  loadBalancer: {}

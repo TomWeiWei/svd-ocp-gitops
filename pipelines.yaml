@@ -1,0 +1,29 @@
+config:
+  argocd:
+    namespace: openshift-gitops
+  pipelines:
+    name: svd-cicd
+environments:
+- apps:
+  - name: app-svd-ocp-app-taxi
+    services:
+    - name: svd-ocp-app-taxi
+      pipelines:
+        integration:
+          bindings:
+          - svd-dev-app-svd-ocp-app-taxi-svd-ocp-app-taxi-binding
+          - github-push-binding
+      source_url: https://github.com/TomWeiWei/svd-ocp-app-taxi.git
+      webhook:
+        secret:
+          name: webhook-secret-svd-dev-svd-ocp-app-taxi
+          namespace: svd-cicd
+  name: svd-dev
+  pipelines:
+    integration:
+      bindings:
+      - github-push-binding
+      template: app-ci-template
+- name: svd-stage
+gitops_url: https://github.com/TomWeiWei/svd-ocp-gitops.git
+version: 1

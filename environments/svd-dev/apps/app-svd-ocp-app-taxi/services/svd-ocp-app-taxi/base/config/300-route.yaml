@@ -1,0 +1,14 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  creationTimestamp: null
+  name: svd-ocp-app-taxi
+  namespace: svd-dev
+spec:
+  port:
+    targetPort: http
+  to:
+    kind: Service
+    name: svd-ocp-app-taxi
+    weight: 100
+  wildcardPolicy: None

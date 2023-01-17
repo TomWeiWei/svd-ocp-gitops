@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/name: svd-ocp-app-taxi
+    app.kubernetes.io/part-of: app-svd-ocp-app-taxi
+  name: svd-ocp-app-taxi
+  namespace: svd-dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: svd-ocp-app-taxi
+      app.kubernetes.io/part-of: app-svd-ocp-app-taxi
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app.kubernetes.io/name: svd-ocp-app-taxi
+        app.kubernetes.io/part-of: app-svd-ocp-app-taxi
+    spec:
+      containers:
+      - image: nginxinc/nginx-unprivileged:latest
+        imagePullPolicy: Always
+        name: svd-ocp-app-taxi
+        ports:
+        - containerPort: 8080
+        resources: {}
+      serviceAccountName: default
+status: {}

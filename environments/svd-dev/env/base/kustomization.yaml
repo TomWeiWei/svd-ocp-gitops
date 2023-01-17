@@ -1,0 +1,3 @@
+resources:
+- svd-dev-environment.yaml
+- svd-dev-rolebinding.yaml

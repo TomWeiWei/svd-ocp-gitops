@@ -1,0 +1,13 @@
+apiVersion: triggers.tekton.dev/v1alpha1
+kind: TriggerBinding
+metadata:
+  creationTimestamp: null
+  name: svd-dev-app-svd-ocp-app-taxi-svd-ocp-app-taxi-binding
+  namespace: svd-cicd
+spec:
+  params:
+  - name: imageRepo
+    value: quay.io/tomweiwei/ocp-taxi
+  - name: tlsVerify
+    value: "true"
+status: {}

@@ -1,0 +1,6 @@
+resources:
+- argo-app.yaml
+- cicd-app.yaml
+- svd-dev-app-svd-ocp-app-taxi-app.yaml
+- svd-dev-env-app.yaml
+- svd-stage-env-app.yaml
