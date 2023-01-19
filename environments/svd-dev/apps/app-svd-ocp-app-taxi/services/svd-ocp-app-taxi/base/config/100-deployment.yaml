@@ -22,7 +22,7 @@ spec:
         app.kubernetes.io/part-of: app-svd-ocp-app-taxi
     spec:
       containers:
-      - image: quay.io/tomweiwei/ocp-taxi:latest
+      - image: quay.io/tomweiwei/ocp-taxi:master-7a1e8e4249808ad0c42ae698bd7f4f9d2c46ac82
         imagePullPolicy: Always
         name: svd-ocp-app-taxi
         ports:
